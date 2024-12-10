@@ -43,4 +43,10 @@ public class ClienteRest {
         clienteRepository.deleteById(clienteCodigo);
         return ResponseEntity.ok(null);
     }
+
+    @PutMapping
+    public ResponseEntity<Cliente> actualizarCliente(@RequestBody Cliente cliente){
+        clienteRepository.save(cliente);
+        return ResponseEntity.ok(cliente);
+    }
 }
