@@ -26,7 +26,7 @@ public class ClienteRest {
         return ResponseEntity.ok(cliente);
     }
 
-    @GetMapping("/apellido/{clienteApellidoPaterno}")
+    @GetMapping("/apellidoPaterno/{clienteApellidoPaterno}")
     public ResponseEntity<Cliente> obtenerClienteApellidoPaterno(@PathVariable String clienteApellidoPaterno){
         Cliente cliente = clienteRepository.findByApellidoPaterno(clienteApellidoPaterno);
         return ResponseEntity.ok(cliente);
