@@ -20,13 +20,13 @@ public class ClienteRest {
         return ResponseEntity.ok(listaClientes);
     }
 
-    @RequestMapping(value = "{clienteDNI}")
-    public ResponseEntity<Cliente> obtenerCliente(@PathVariable String clienteDNI){
+    @GetMapping("/dni/{clienteDNI}")
+    public ResponseEntity<Cliente> obtenerClienteDNI(@PathVariable String clienteDNI){
         Cliente cliente = clienteRepository.findByDni(clienteDNI);
         return ResponseEntity.ok(cliente);
     }
 
-    @RequestMapping(value = "{clienteApellidoPaterno}")
+    @GetMapping("/apellido/{clienteApellidoPaterno}")
     public ResponseEntity<Cliente> obtenerClienteApellidoPaterno(@PathVariable String clienteApellidoPaterno){
         Cliente cliente = clienteRepository.findByApellidoPaterno(clienteApellidoPaterno);
         return ResponseEntity.ok(cliente);
