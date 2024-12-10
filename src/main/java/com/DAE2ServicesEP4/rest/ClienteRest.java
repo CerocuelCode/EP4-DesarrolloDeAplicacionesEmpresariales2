@@ -38,9 +38,9 @@ public class ClienteRest {
         return ResponseEntity.ok(nuevoCliente);
     }
 
-    @DeleteMapping(value = "{clienteId}")
-    public ResponseEntity<Void> eliminarCliente(@PathVariable("clienteId") int clienteId){
-        clienteRepository.deleteById(clienteId);
+    @DeleteMapping(value = "{clienteCodigo}")
+    public ResponseEntity<Void> eliminarCliente(@PathVariable("clienteCodigo") int clienteCodigo){
+        clienteRepository.deleteById(clienteCodigo);
         return ResponseEntity.ok(null);
     }
 }
