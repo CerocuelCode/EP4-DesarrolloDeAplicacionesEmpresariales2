@@ -20,6 +20,12 @@ public class ClienteRest {
         return ResponseEntity.ok(listaClientes);
     }
 
+    @GetMapping("codigo/{clienteCodigo}")
+    public ResponseEntity<Cliente> obtenerClienteCodigo(@PathVariable int clienteCodigo){
+        Cliente cliente = clienteRepository.findById(clienteCodigo);
+        return ResponseEntity.ok(cliente);
+    }
+
     @GetMapping("/dni/{clienteDNI}")
     public ResponseEntity<Cliente> obtenerClienteDNI(@PathVariable String clienteDNI){
         Cliente cliente = clienteRepository.findByDni(clienteDNI);
