@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
     List<Cliente> findAll();
+    Cliente findById(int id);
     Cliente findByDni(String dni);
     Cliente findByApellidoPaterno(String apellidoPaterno);
     void deleteById(int id);
